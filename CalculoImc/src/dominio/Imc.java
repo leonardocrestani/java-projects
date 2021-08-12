@@ -2,30 +2,16 @@ package dominio;
 
 
 public class Imc {
-    private double altura;
-    private double peso;
     private String classificacaoImc;
     private double imc;
-    
-    public Imc(double alturaPessoa, double pesoPessoa) {
-        this.altura = alturaPessoa;
-        this.peso = pesoPessoa;
-    }
-    
-    public double getAltura() {
-        return this.altura;
-    }
-    
-    public double getPeso() {
-        return this.peso;
-    }
+
     
     public double getImc() {
         return this.imc;
     }
     
-    public void calculaImc() {
-        double imc = this.peso / (altura * altura);
+    public void calculaImc(double pesoPessoa, double alturaPessoa) {
+        double imc = pesoPessoa / (alturaPessoa * alturaPessoa);
         imc = Math.round(imc * 100);
         imc = imc/100;
         this.imc = imc;

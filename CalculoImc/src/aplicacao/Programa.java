@@ -40,11 +40,11 @@ public class Programa {
     public static void criaPessoa() {
         String nome = Console.lerString("Nome: ");
         String sobrenome = Console.lerString("Sobrenome: ");
-        Pessoa p = new Pessoa(nome, sobrenome);
-        double peso = Console.lerDoubleImc("Peso: ");
         double altura = Console.lerDoubleImc("Altura: ");
-        Imc imc = new Imc(altura, peso);
-        imc.calculaImc();
+        double peso = Console.lerDoubleImc("Peso: ");
+        Pessoa p = new Pessoa(nome, sobrenome, altura, peso);
+        Imc imc = new Imc();
+        imc.calculaImc(p.getPeso(), p.getAltura());
         imc.classificaImc();
         p.setImc(imc);
         pessoas.add(p);
@@ -52,7 +52,7 @@ public class Programa {
     
     public static void listarPessoas() {
         // pegar todas as pessoas armazenadas no ArrayList e mostrar os dados utilizando um forEach na mao
-        System.out.println("\n" + "---- Lista das pessoas cadastradas ----");
+        System.out.println("\n" + "---- Lista das pessoas cadastradas e IMC ----");
         for(Pessoa p : pessoas) {
             Console.mostraMensagem(p.getPessoaInfo(), true);
             System.out.println();
