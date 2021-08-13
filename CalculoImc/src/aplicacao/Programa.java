@@ -1,7 +1,7 @@
 package aplicacao;
 
 import util.Console;
-import dominio.Imc;
+import util.Imc;
 import dominio.Pessoa;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,9 +40,9 @@ public class Programa {
     public static void criaPessoa() {
         String nome = Console.lerString("Nome: ");
         String sobrenome = Console.lerString("Sobrenome: ");
-        double altura = Console.lerDoubleImc("Altura: ");
         double peso = Console.lerDoubleImc("Peso: ");
-        Pessoa p = new Pessoa(nome, sobrenome, altura, peso);
+        double altura = Console.lerDoubleImc("Altura: ");
+        Pessoa p = new Pessoa(nome, sobrenome, peso, altura);
         Imc imc = new Imc();
         imc.calculaImc(p.getPeso(), p.getAltura());
         imc.classificaImc();
@@ -52,7 +52,7 @@ public class Programa {
     
     public static void listarPessoas() {
         // pegar todas as pessoas armazenadas no ArrayList e mostrar os dados utilizando um forEach na mao
-        System.out.println("\n" + "---- Lista das pessoas cadastradas e IMC ----");
+        System.out.println("\n" + "-- Lista das pessoas cadastradas e IMC --");
         for(Pessoa p : pessoas) {
             Console.mostraMensagem(p.getPessoaInfo(), true);
             System.out.println();

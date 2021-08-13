@@ -1,5 +1,7 @@
 package dominio;
 
+import util.Imc;
+
 
 public class Pessoa {
     private String nome;
@@ -8,11 +10,11 @@ public class Pessoa {
     private double peso;
     private Imc imc;
     
-    public Pessoa(String nomePessoa, String sobrenomePessoa, double alturaPessoa, double pesoPessoa) {
+    public Pessoa(String nomePessoa, String sobrenomePessoa, double pesoPessoa, double alturaPessoa) {
         this.nome = nomePessoa;
         this.sobrenome = sobrenomePessoa;
-        this.altura = alturaPessoa;
         this.peso = pesoPessoa;
+        this.altura = alturaPessoa;
     }
     
     public String getNome() {
