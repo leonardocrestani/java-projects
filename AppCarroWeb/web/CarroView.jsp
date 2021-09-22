@@ -26,6 +26,7 @@
     
     if(request.getParameter("ligarDesligar") != null) {
         Carro c = (Carro) request.getSession().getAttribute("selecionado");
+        request.getSession().setAttribute("mensagemErro", "");
         try {
             c.power();
         }
@@ -37,6 +38,7 @@
     
     if(request.getParameter("acelerar") != null) {
         Carro c = (Carro) request.getSession().getAttribute("selecionado");
+        request.getSession().setAttribute("mensagemErro", "");
         try {
             c.acelerar();
         }
@@ -48,6 +50,7 @@
     
     if(request.getParameter("desacelerar") != null) {
         Carro c = (Carro) request.getSession().getAttribute("selecionado");
+        request.getSession().setAttribute("mensagemErro", "");
         System.out.println(c);
         try {
             c.desacelerar();
